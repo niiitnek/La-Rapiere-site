@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr">
-<!-- Titre de page internet -->
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="La Rapière Sézanne | Club d'Escrime">
+    <meta property="og:description" content="Club d'Escrime à Sézanne - Fédération Française d'Escrime">
+    <meta property="og:image" content="pictures/logo-ffe.jpg">
+    <meta property="og:url" content="https://la-rapiere-sezanne.asso.fr">
     <title>La Rapière Sézanne | Club d'Escrime</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Importation pour les logo mail et Facebook -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <!-- Corps de la page internet -->
 <body>
     <!-- En-tête -->
     <header>
-        <div class="logo">La Rapière de Sézanne | Fédération Française d'Escrime</div>
+        <div class="logo">
+            <img class="logo-ffe" src="pictures/ffe-removebg.png" alt="Logo Fédération Française d'Escrime">
+            Cercle d'Escrime de Sézanne | Fédération Française d'Escrime
+        </div>
         <nav>
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#infos">Infos pratiques</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#accueil">Accueil</a></li> -->
+                <li class="dropdown"><a>Le Club ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#infos">Infos pratiques</a></li>
+                        <li><a href="actus.html">Actualités</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li> 
             </ul>
         </nav>
     </header>
@@ -26,9 +41,9 @@
     <main>
         <section id="accueil" class="hero">
             <h1>L'escrime au cœur de la Marne</h1>
-            <p>Rejoignez Cercle d'Escrime de Sézanne. Débutants et compétiteurs bienvenus.</p>
-            <button id="btn-rejoindre">Nous rejoindre</button>
-            <a href="photos.html"><button id="btn-photos" onclick="">Album photos</button></a>
+            <p>Rejoignez Cercle d'Escrime de Sézanne</p>
+            <p>Débutants et compétiteurs bienvenus</p>
+            <button id="btn-rejoindre">Nous contacter</button>
         </section>
 
         <section id="infos">
@@ -39,7 +54,7 @@
                     <p>5 à 10 ans : </p>
                     <b>Mercredis 10h-12h</b>
                     <p>Adultes :</p>
-                    <b>Jeudis 18H-19h30</b>
+                    <b>Jeudis 18h-19h30</b>
                 </div>
                 <div class="card">
                     <h2>Où ?</h2>
@@ -48,7 +63,7 @@
                     <p>51120 Sézanne</p>
                 </div>
                 <div class="card">
-                    <h2>Armes</h2>
+                    <h2>Quoi ?</h2>
                     <p>Sabre</p>
                     <p>Épée</p>
                     <p>Fleuret</p>
@@ -74,7 +89,9 @@
                     <h3><a target="_blank" href="mailto:escrime.sezanne@gmail.com">PAR MAIL</a></h3>
                 </div>
                 <div class="card">
-                    <h3><a target="_blank" href="https://www.facebook.com/people/Escrime-la-Rapi%C3%A8re-S%C3%A9zanne/100035516421670/">VIA FACEBOOK</a></h3>
+                    <h3><a target="_blank" href="https://www.facebook.com/people/Escrime-la-Rapi%C3%A8re-S%C3%A9zanne/100035516421670/">
+                        VIA FACEBOOK</a>
+                    </h3>
                 </div>
             </div>
         </section>

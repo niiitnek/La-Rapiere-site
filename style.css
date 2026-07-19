@@ -1,10 +1,32 @@
 /* Réinitialisation de base */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Skip navigation link for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #02a002;
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+/* Contour autour des élément qd cliqués */
+/* a:focus, button:focus {
+    outline: 2px solid #000e00;
+    outline-offset: 2px;
+} */
 
 body {
     background-color: #f4f4f9;
@@ -25,6 +47,23 @@ header {
     z-index: 100; /* Permet au menu de rester au-dessus du reste au défilement */
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #f4f4f9;
+}
+
+.logo-ffe {
+    width: 40px;
+    height: auto;
+    flex-shrink: 0;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -43,18 +82,62 @@ nav a:hover {
     color: #02a002;
 }
 
+/* menu déroulant */
+.dropdown{
+    position: relative;
+    cursor: pointer;
+    display: list-item;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #2a3b4c;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    /* Annule les paramètres du menu principal pour que ce soit vertical */
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+/* Les liens à l'intérieur du menu déroulant */
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content a {
+    padding: 1rem;
+    display: block; /* Prend toute la largeur de la case */
+    border-bottom: 1px solid #2a3b4c; /* Petite ligne de séparation */
+}
+
+/* Effet de survol sur les liens du sous-menu */
+.dropdown-content a:hover {
+    background-color: #2a3b4c;
+    color: white; 
+}
+
+/* L'ANIMATION CRUCIALE : afficher le sous-menu quand on survole le parent */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
 /*  ---  Section principale  ---  */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/home/pasmoi/Documents/La Rapiere site/pictures/panoramaSezanne.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pictures/panoramaSezanne.jpg');
     background-color: #1a2530; /* Couleur de secours si l'image ne charge pas */
-    /* height: 80vh; */
+    height: 90vh;
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
     background-size: cover;
-    background-position-y: top;
+    /* background-position-y: top; */
     color: white;
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 10rem 2rem;
 }
 
 .hero-texte h1 {
@@ -80,6 +163,7 @@ button {
     cursor: pointer;
     font-size: 1.1rem;
     border-radius: 5px;
+    -ms-zoom-animation: calc(2);
 }
 
 button:hover {
@@ -93,6 +177,11 @@ button:hover {
 }
 
 #contact {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+#actualites {
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -120,6 +209,11 @@ button:hover {
     width: 600px;
 }
 
+/* Better contrast ratios */
+.card h2, .card h3 {
+    color: #1a2530;
+}
+
 /* --- photos.html --- */
 
 .album{
@@ -131,7 +225,8 @@ button:hover {
 }
 
 footer {
-    text-align: center;
+    text-align: right;
+    font-size: smaller;
     padding: 1rem;
     background-color: #1a2530;
     color: #f4f4f9;
