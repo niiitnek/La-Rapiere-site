@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" prefix="og: http://ogp.me/ns#">
+<html lang="fr_FR" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,10 @@
 
 <!-- Corps de la page internet -->
 <body>
+    <!-- Load Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2"></script>
+
     <!-- En-tête -->
     <header>
         <div class="logo">
@@ -29,7 +33,8 @@
                 <li class="dropdown"><a>Le Club ▼</a>
                     <ul class="dropdown-content">
                         <li><a href="#infos">Infos pratiques</a></li>
-                        <li><a href="actus.html">Actualités</a></li>
+                        <li><a href="#actus">Actualités</a></li>
+                        <li><a href="#album">Album photos</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li> 
@@ -47,14 +52,14 @@
         </section>
 
         <section id="infos">
-            <h2>Informations pratiques</h2>
+            <h1>Informations pratiques</h1>
             <div class="grid">
                 <div class="card">
                     <h2>Quand ?</h2>
-                    <p>5 à 10 ans : </p>
-                    <b>Mercredis 10h-12h</b>
-                    <p>Adultes :</p>
-                    <b>Jeudis 18h-19h30</b>
+                    <u>5 à 10 ans :</u>
+                    <b> Mercredis 10h-12h</b>
+                    <u>Adultes :</u>
+                    <b> Jeudis 18h-19h30</b>
                 </div>
                 <div class="card">
                     <h2>Où ?</h2>
@@ -82,8 +87,40 @@
             </div>
         </section>
 
+        <!-- <section id="actualites">
+            <div class="actualites">
+                <h1>Actualités du club</h1>
+            </div>
+
+        Faire le lien avec la page plugin Facebook
+            <div class="facebook-container">
+                <iframe 
+                    src="https://www.facebook.com/people/Escrime-la-Rapi%C3%A8re-S%C3%A9zanne/100035516421670/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=400&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                    width="400" height="600" style="border:none;
+                    overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; 
+                    clipboard-write; 
+                    encrypted-media; 
+                    picture-in-picture; 
+                    web-share">
+                </iframe>
+            </div>
+        </section> -->
+
+        <section id="album">
+            <div class="album">
+                <h1>Galerie photos</h1>
+                <div class="grid">
+                    <a><img src="https://scontent-cdg6-1.xx.fbcdn.net/v/t39.30808-6/609152678_1549156299611569_5532721795437144982_n.jpg?stp=c256.0.1536.1536a_cp6_dst-jpg_tt6&cstp=mx1536x1536&ctp=s206x206&_nc_cat=105&ccb=1-7&_nc_sid=50ad20&_nc_ohc=51EuauJm5xsQ7kNvwECO-7R&_nc_oc=AdpUVge_vKCvO0l9hMLYPGgtCp4ePpxZIBxsvsuEggHUm7Non9sTBDo-1EAE-tL9dlNjdjKIgufZS7lX5kAIWpZy&_nc_zt=23&_nc_ht=scontent-cdg6-1.xx&_nc_gid=vOcmZRBBGuEi9aINLdlbQg&_nc_ss=7b289&oh=00_AQDIMGljHN1W7md7gZ8V1pBbIQ7yZGAcu4VEMQ64YIpyyw&oe=6A670259"></a>
+                    <a><img src="https://scontent-cdg6-1.xx.fbcdn.net/v/t39.30808-6/611631517_1550681702792362_5879387966960383086_n.jpg?stp=c250.0.1500.1500a_dst-jpg_tt6&cstp=mx1500x1500&ctp=s206x206&_nc_cat=106&ccb=1-7&_nc_sid=50ad20&_nc_ohc=8nxTPHxOw3kQ7kNvwHdxNDh&_nc_oc=AdoDeszIZGtVJmK21CMSHT_AFirrWuTY5VJbidX_k0NxvHW7n4wFeBioClMhuN3xdvOjgI1AWiZy2TWyGg3m6m8C&_nc_zt=23&_nc_ht=scontent-cdg6-1.xx&_nc_gid=fKqziYoGafwVdz2AMluzwA&_nc_ss=7b289&oh=00_AQDu416yCPRTAbZStCwJqXs4HfcDzhCsmrLgve7z53dv-g&oe=6A670932"></a>
+                </div>
+            </div>
+            <button id="btn-album">
+                <a href="album.html">Plus de photos</a>    
+            </button>
+        </section>
+
         <section id="contact">
-            <h2>Comment nous contacter ?</h2>
+            <h1>Comment nous contacter ?</h1>
             <div class="grid">
                 <div class="card">
                     <h3><a target="_blank" href="mailto:escrime.sezanne@gmail.com">PAR MAIL</a></h3>
@@ -99,7 +136,9 @@
 
 <!-- Banderole bas de page -->
     <footer>
-        <p>&copy; 2026 La Rapière de Sézanne - Association Loi 1901</p>
+        <p>&copy; 2026 La Rapière de Sézanne - Association Loi 1901
+            <!-- <img src="pictures/logoLaRapiere-removebg.png" alt="Logo de l'association La Rapière"> -->
+        </p>
     </footer>
 
     <script src="script.js"></script>
